@@ -72,7 +72,7 @@ class ArraryToExcel{
             define('PHPEXCEL_ROOT', dirname(__FILE__) . '/');
             require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
         }
-        *
+        *Autoloader.php的load函数采用以_为符号拆分类名的方式，定义到具体的文件类
         */
         Vendor('PHPExcel');
         $this->excelObj=new \PHPExcel();
