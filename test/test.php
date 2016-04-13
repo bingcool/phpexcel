@@ -130,24 +130,24 @@ public function scoreimport() {
 		$year_class=$data[0][0];
 
 		foreach($data as $key=>$val) {
-				$info[$key]=array(
-					'usernumber'=>$val[1],
-					'username'=>$val[2],
-					'score'=>($val[3] ? $val[3] : '无数据'),
-				);
+			$info[$key]=array(
+				'usernumber'=>$val[1],
+				'username'=>$val[2],
+				'score'=>($val[3] ? $val[3] : '无数据'),
+			);
 			
 		}
 
 		// 要导入的数组的信息
 		$scoredata=array(
-				'tid'=>$tid,
-				'testname'=>$testname,
-				'year_class'=>$year_class,
-				'term'=>$term,
-				'totalscore'=>$totalscore,
-				'scoreinfo'=>$info,
-				'importData'=>date('Y-m-d H:i:s',time()),
-			);
+			'tid'=>$tid,
+			'testname'=>$testname,
+			'year_class'=>$year_class,
+			'term'=>$term,
+			'totalscore'=>$totalscore,
+			'scoreinfo'=>$info,
+			'importData'=>date('Y-m-d H:i:s',time()),
+		);
 
 		$offlineScore=new \Think\Model\MongoModel('import_score');
 
