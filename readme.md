@@ -1,1 +1,1 @@
-下载文件后，将文件夹的所有文件复制至thinkphp的library的Vendor文件夹下，具体的demo请看test文件夹的函数，有详细的说明
+下载文件后，将文件夹src下的所有文件复制至thinkphp的library的Vendor文件夹下，具体的demo请看test文件夹的函数，有详细的说明
