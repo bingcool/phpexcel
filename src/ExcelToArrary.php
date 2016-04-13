@@ -19,17 +19,23 @@ class ExcelToArray {
         *导入文件的位置一定要准确，本人是把放在Vendor下
         *把下载的PHPExcel文件夹和PHPExcel.php放在Vendor下.
         */
-        /* 
-        *vendor('PHPExcel');
-        *new \PHPExcel();
+        /**包含加载PHPExcel.php，完成PHPExcel文件夹的一个Autoloader.php的自动注册
+        *if (!defined('PHPEXCEL_ROOT')) {
+            define('PHPEXCEL_ROOT', dirname(__FILE__) . '/');
+            require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
+        }
+        *Autoloader.php的load函数采用以_为符号拆分类名的方式，定义到具体的文件类
         */
+        vendor('PHPExcel');
+        new \PHPExcel();
         $this->filename=$filename;
         $this->ext=$this->getExt();
         //引入phpexcel类(注意你自己的路径)
-        Vendor("PHPExcel");  
+        /*Vendor("PHPExcel");  
         Vendor("PHPExcel.IOFactory"); 
         Vendor("PHPExcel.Reader.Excel5"); 
         Vendor("PHPExcel.Reader.Excel2007"); 
+        */
 
     }
 
